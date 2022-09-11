@@ -1,6 +1,6 @@
 # Tinkoff ML entrance exam
 
-This repository contains implementaion of an N-gram model
+This repository contains implementaion of an N-gram model for text generation
 
 There is a **'config.py'** file from which the constant N is derived.
 
@@ -8,27 +8,21 @@ There is a **'config.py'** file from which the constant N is derived.
 
 To generate a model file
 ```sh
-python3 train.py [-h] [--input-dir INPUT_DIR] [--model MODEL]
+python3 train.py [--input-dir INPUT_DIR] [--model MODEL]
 
-Train the model
-
-optional arguments:
-  -h, --help            show this help message and exit
+arguments:
   --input-dir INPUT_DIR
                         directory to read the training data from
   --model MODEL         path to write out the trained model to
 ```
 To generate text used a saved model file
 ```sh
-python3 generate.py [-h] [--model MODEL] [--prefix [WORD [WORD ...]]] [--length LENGTH]
+python3 generate.py [--model MODEL] [--prefix [WORD [WORD ...]]] [--length LENGTH]
 
-Train the model
-
-optional arguments:
-  -h, --help            show this help message and exit
+arguments:
   --model MODEL         Path to trained model
   --prefix [WORD [WORD ...]]
-                        Prefix to begin the generation with
+                        Prefix to begin the generation with. Default is empty text.
   --length LENGTH       Length of desired generated text. Default is 200
 ```
 

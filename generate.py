@@ -3,7 +3,7 @@ from config import N
 from random import randint
 import numpy as np
 
-parser = argparse.ArgumentParser(description='Train the model')
+parser = argparse.ArgumentParser(description='Generate the text')
 parser.add_argument('--model', help='Path to trained model')
 parser.add_argument('--prefix', metavar="WORD", help='Prefix to begin the generation with', nargs='*')
 parser.add_argument('--length', type=int, default=200, help='Length of desired generated text. Default is 200')
