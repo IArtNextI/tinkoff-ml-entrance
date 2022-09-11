@@ -44,7 +44,7 @@ def Harry():
     fin.close()
     fout = open("harry-3.txt", 'w')
     content = content.replace('\n', ' ').replace(',', '').replace("\"", "").replace(":", '').replace(";", '').replace('(', ' ').replace(')', ' ').replace('!', '.').replace('?', '.').replace("'", '').replace('.', ' ').replace('-', ' ').replace('  ', ' ').replace('’', '').replace("—", "").replace("”", "").replace("“", "").lower()
-    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '')
+    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '').replace('/', '')
     print(content, file=fout)
     fout.close()
     os.remove("harry.txt")    
@@ -69,7 +69,7 @@ def Harry2():
     fin.close()
     fout = open("2harry-3.txt", 'w')
     content = content.replace('\n', ' ').replace(',', '').replace("\"", "").replace(":", '').replace(";", '').replace('(', ' ').replace(')', ' ').replace('!', '.').replace('?', '.').replace("'", '').replace('.', ' ').replace('-', ' ').replace('  ', ' ').replace('’', '').replace("—", "").replace("”", "").replace("“", "").lower()
-    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '')
+    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '').replace('/', '')
     print(content, file=fout)
     fout.close()
     os.remove("2harry.txt")    
@@ -94,13 +94,12 @@ def Harry3():
     fin.close()
     fout = open("3harry-3.txt", 'w')
     content = content.replace('\n', ' ').replace(',', '').replace("\"", "").replace(":", '').replace(";", '').replace('(', ' ').replace(')', ' ').replace('!', '.').replace('?', '.').replace("'", '').replace('.', ' ').replace('-', ' ').replace('  ', ' ').replace('’', '').replace("—", "").replace("”", "").replace("“", "").lower()
-    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '')
+    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '').replace('/', '')
     print(content, file=fout)
     fout.close()
     os.remove("3harry.txt")    
     os.remove("3harry-2.txt")
     os.rename("3harry-3.txt", "data/3harry-3.txt")
-
 
 if __name__ == "__main__":
     Shakespeare()
