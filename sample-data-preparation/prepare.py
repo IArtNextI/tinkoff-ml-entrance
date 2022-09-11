@@ -51,6 +51,34 @@ def Harry():
     os.remove("harry-2.txt")
     os.rename("harry-3.txt", "data/harry-3.txt")
 
+    
+def Harry2():
+    fin = open("2harry.txt", 'r')
+    content = fin.readlines()
+    fin.close()
+    content = content[7:]
+    fout = open("2harry-2.txt", 'w')
+    for line in content:
+        if "J.K. Rowling" in line:
+            continue
+        if line == '\n':
+            continue
+        print(line, file=fout)
+    fout.close()
+    fin = open("2harry-2.txt", 'r')
+    content = fin.read()
+    fin.close()
+    fout = open("2harry-3.txt", 'w')
+    content = content.replace('\n', ' ').replace(',', '').replace("\"", "").replace(":", '').replace(";", '').replace('(', ' ').replace(')', ' ').replace('!', '.').replace('?', '.').replace("'", '').replace('.', ' ').replace('-', ' ').replace('  ', ' ').replace('’', '').replace("—", "").replace("”", "").replace("“", "").lower()
+    content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '')
+    print(content, file=fout)
+    fout.close()
+    os.remove("2harry.txt")    
+    os.remove("2harry-2.txt")
+    os.rename("2harry-3.txt", "data/2harry-3.txt")
+
+
 if __name__ == "__main__":
     Shakespeare()
     Harry()
+    Harry2()
