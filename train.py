@@ -1,6 +1,7 @@
 import argparse
 from os import listdir
 from config import N
+from pickle import dump
 
 parser = argparse.ArgumentParser(description='Train the model')
 parser.add_argument('--input-dir', help='directory to read the training data from')
@@ -19,12 +20,13 @@ else:
 
 cnt = dict()
 for file in content:
-    for i in range(N, len(file)):
-        if cnt.get(tuple(file[i - N : i]), None) is not None:
-            cnt[tuple(file[i - N : i])][file[i]] = cnt[tuple(file[i - N : i])].get(file[i], 0) + 1
-        else:
-            cnt[tuple(file[i - N : i])] = dict()
-            cnt[tuple(file[i - N : i])][file[i]] = 1
+    for j in range(1, N + 1):
+        for i in range(N, len(file)):
+            if cnt.get(tuple(file[i - N + j - 1 : i]), None) is not None:
+                cnt[tuple(file[i - N + j - 1 : i])][file[i]] = cnt[tuple(file[i - N + j - 1 : i])].get(file[i], 0) + 1
+            else:
+                cnt[tuple(file[i - N + j - 1 : i])] = dict()
+                cnt[tuple(file[i - N + j - 1 : i])][file[i]] = 1
 
 new_cnt = dict()
 for k, v in cnt.items():
@@ -35,6 +37,6 @@ for k, v in cnt.items():
     for word, opa in v.items():
         new_cnt[k][word] = opa / total
 
-fout = open(args.model, 'w')
-print(new_cnt, file=fout)
+fout = open(args.model, 'wb')
+dump(new_cnt, fout)
 fout.close()

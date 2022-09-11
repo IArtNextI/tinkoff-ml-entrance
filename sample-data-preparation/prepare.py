@@ -43,7 +43,7 @@ def Harry():
     content = fin.read()
     fin.close()
     fout = open("harry-3.txt", 'w')
-    content = content.replace('\n', ' ').replace(',', '').replace("\"", "").replace(":", '').replace(";", '').replace('!', '.').replace('?', '.').replace("'", '').replace('.', ' ').replace('-', ' ').replace('  ', ' ').replace('’', '').replace("—", "").replace("”", "").replace("“", "").lower()
+    content = content.replace('\n', ' ').replace(',', '').replace("\"", "").replace(":", '').replace(";", '').replace('(', ' ').replace(')', ' ').replace('!', '.').replace('?', '.').replace("'", '').replace('.', ' ').replace('-', ' ').replace('  ', ' ').replace('’', '').replace("—", "").replace("”", "").replace("“", "").lower()
     content = content.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace('\\', '')
     print(content, file=fout)
     fout.close()
