@@ -20,7 +20,7 @@ arguments:
                         directory to read the training data from
   --model MODEL         path to write out the trained model to
 ```
-To generate text used a saved model file
+To generate text using a saved model file
 ```sh
 python3 generate.py [--model MODEL] [--prefix [WORD [WORD ...]]] [--length LENGTH]
 
