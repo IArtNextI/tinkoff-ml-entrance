@@ -19,7 +19,7 @@ else:
 
 cnt = dict()
 for file in content:
-    for i in range(2, len(file)):
+    for i in range(N, len(file)):
         if cnt.get(tuple(file[i - N : i]), None) is not None:
             cnt[tuple(file[i - N : i])][file[i]] = cnt[tuple(file[i - N : i])].get(file[i], 0) + 1
         else:
