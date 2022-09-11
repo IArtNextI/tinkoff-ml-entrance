@@ -54,7 +54,7 @@ To call:
 ## generate.sh
 This script is to be used with parameter that determines the desired length of generated text
 
-For example, following call will generate a text consisting of 200 wordsL
+For example, following call will generate a text consisting of 200 words.
 ```bash
 ./scripts/generate.sh 200
 ```
